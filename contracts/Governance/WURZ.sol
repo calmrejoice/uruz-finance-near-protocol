@@ -16,12 +16,12 @@ interface GovernorAlphaInterface{
     function getReceipt(uint proposalId, address voter) external view returns(Receipt memory);
 }
 
-contract TRC20Events {
+contract ERC20Events {
     event Approval(address indexed src, address indexed guy, uint wad);
     event Transfer(address indexed src, address indexed dst, uint wad);
 }
 
-contract TRC20 is TRC20Events {
+contract ERC20 is ERC20Events {
     function totalSupply() public view returns (uint256);
     function balanceOf(address guy) public view returns (uint256);
     function allowance(address src, address guy) public view returns (uint256);
@@ -33,7 +33,7 @@ contract TRC20 is TRC20Events {
     ) public returns (bool);
 }
 
-contract ITokenDeposit is TRC20 {
+contract ITokenDeposit is ERC20 {
     function deposit(uint256) public;
     function withdraw(uint256) public;
 }
@@ -85,7 +85,7 @@ contract WURZ is ITokenDeposit {
     }
 
     function deposit(uint256 sad) public {
-        require(TRC20(urzAddress).transferFrom(msg.sender,address(this),sad));
+        require(ERC20(urzAddress).transferFrom(msg.sender,address(this),sad));
         // balanceOf_[msg.sender] += sad;
         // totalSupply_ += sad;
         balanceOf_[msg.sender] = balanceOf_[msg.sender].add(sad);
@@ -97,7 +97,7 @@ contract WURZ is ITokenDeposit {
         require(balanceOf_[msg.sender] >= sad, "not enough balance");
         balanceOf_[msg.sender] -= sad;
         totalSupply_ -= sad;
-        require(TRC20(urzAddress).transfer(msg.sender,sad));
+        require(ERC20(urzAddress).transfer(msg.sender,sad));
         emit Withdrawal(msg.sender, sad);
     }
 

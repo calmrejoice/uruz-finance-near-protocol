@@ -1,14 +1,15 @@
+require("dotenv").config();
 const WURZ = artifacts.require("./WURZ.sol");
 const GovernorAlpha = artifacts.require("./GovernorAlpha.sol");
 const Timelock = artifacts.require("./Timelock.sol");
 
-const { tokens } = require("../data/test-tokens.json");
+const { address } = require("../config");
 
 module.exports = async function (deployer) {
   await deployer.deploy(
     WURZ,
     "0x0000000000000000000000000000000000000000",
-    tokens[0]
+    address.urz
   );
   const wurz = await WURZ.deployed();
 

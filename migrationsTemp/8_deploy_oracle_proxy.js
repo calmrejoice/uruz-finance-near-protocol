@@ -1,13 +1,12 @@
-const { CEther } = require("../data/tokensData");
-const { oracleV1: oracleV1Address } = require("../data/test-oracle.json");
+const { address } = require("../config");
 const PriceOracleProxy = artifacts.require("./PriceOracleProxy.sol");
 
 module.exports = async function (deployer) {
   await deployer.deploy(
     PriceOracleProxy,
     process.env.ADMIN,
-    oracleV1Address,
-    CEther.address,
+    address.priceOracle,
+    address.ueth,
     "0x0000000000000000000000000000000000000000",
     "0x0000000000000000000000000000000000000000",
     "0x0000000000000000000000000000000000000000",

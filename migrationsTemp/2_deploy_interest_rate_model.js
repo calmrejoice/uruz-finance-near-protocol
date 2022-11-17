@@ -1,5 +1,8 @@
+const { BigNumber } = require("ethers");
+
+var JumpRateModelV2 = artifacts.require("./JumpRateModelV2.sol");
+
 require("dotenv").config();
-const JumpRateModelV2 = artifacts.require("./JumpRateModelV2.sol");
 
 module.exports = async function (deployer) {
   const rateModel = {
