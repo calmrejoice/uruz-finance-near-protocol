@@ -5,7 +5,7 @@ const cEther = artifacts.require("./CEther.sol");
 module.exports = async (deployer) => {
   const cEtherDetails = {
     interestRateModel: address.ethInterestRate,
-    exchangeRate: "101978605025782",
+    exchangeRate: "102516211882138512249446693",
     name: "Uruz ETH",
     symbol: "uETH",
     decimals: 8,

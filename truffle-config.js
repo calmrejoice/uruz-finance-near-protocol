@@ -24,7 +24,8 @@ module.exports = {
     aurora: {
       provider: () => setupWallet("https://testnet.aurora.dev"),
       network_id: "1313161555",
-      gas: 10000000,
+      gas: 100000000,
+      gasLimit: 100000000000,
       from: "0xDB033CE019a09dFCBc2f96d66Ba8a40a51F14Bc6",
       deploymentPollingInterval: 8000,
       timeoutBlocks: 500,
@@ -48,7 +49,7 @@ module.exports = {
           enabled: true,
           runs: 10000,
         },
-        // evmVersion: "byzantium",
+        evmVersion: "byzantium",
       },
     },
   },
