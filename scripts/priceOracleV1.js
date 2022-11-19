@@ -22,7 +22,7 @@ const getPrice = async (underlyingTokenAddress) => {
 };
 
 const main = async () => {
-  //   const price = (0.3 * 10 ** 18).toString();
+  const price = (0.369 * 10 ** 18).toString();
   //   await setPrice(address.urz, price);
   await getPrice(address.urz);
 };

@@ -20,5 +20,7 @@ module.exports = async function (deployer) {
   const timelock = await Timelock.deployed();
 
   await wurz.setGovernorAlpha(GovernorAlpha.address);
-  // await governorAlpha.setTimelock(timelock.address); bug, cant execute this function, need to go to tronscan
+
+  // bug, cant execute this function, need to go to tronscan
+  await governorAlpha.setTimelock(timelock.address);
 };

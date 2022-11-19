@@ -101,11 +101,11 @@ const main = async () => {
   // await setCloseFactor("500000000000000000");
   // await getCloseFactor();
   // // Additional Comptroller Settings
-  // await addMarket(address.ueth);
+  // await addMarket(address.uurzDelegator);
   // await getAllMarkets();
-  // const collateralFactorBN = (0.75 * 10 ** 18).toString();
-  // await setCollateralFactor(address.ueth, collateralFactorBN);
-  // await getCollateralFactor(address.ueth);
+  // const collateralFactorBN = (0.5 * 10 ** 18).toString();
+  // await setCollateralFactor(address.uurzDelegator, collateralFactorBN);
+  // await getCollateralFactor(address.uurzDelegator);
   // await getImplementation();
 };
 
